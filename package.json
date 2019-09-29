@@ -1,0 +1,14 @@
+{
+  "name": "sso",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "tradition": "node tradition/index.js",
+    "pupp": "node pupp.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "puppeteer": "^1.20.0"
+  }
+}
