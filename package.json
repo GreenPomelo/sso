@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "tradition": "node tradition/index.js",
-    "pupp": "node pupp.js"
+    "pupp:dev": "NODE_ENV=dev node pupp.js",
+    "pupp:prod": "NODE_ENV=prod node pupp.js"
   },
   "dependencies": {
     "axios": "^0.19.0",

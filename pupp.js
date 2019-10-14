@@ -11,7 +11,20 @@ const main = async () => {
   return console.log(">>>>>>>> 先改个账号密码再来吧");
 
   const start = performance.now();
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({
+    headless: process.env.NODE_ENV === "dev" ? false : true,
+    ignoreHTTPSErrors: true,
+    args: [
+      "--disable-web-security",
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--disable-gpu",
+      "--disable-dev-shm-usage",
+      "--no-first-run",
+      "--no-zygote",
+      "--disable-popup-blocking"
+    ]
+  });
 
   const page = await browser.newPage();
   await page._client.send("Network.clearBrowserCookies");
